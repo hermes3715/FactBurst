@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FactBurst/static/css/main.3a9373a0.css",
+    "main.js": "/FactBurst/static/js/main.68dddfd8.js",
+    "static/js/453.0d88736f.chunk.js": "/FactBurst/static/js/453.0d88736f.chunk.js",
+    "index.html": "/FactBurst/index.html",
+    "main.3a9373a0.css.map": "/FactBurst/static/css/main.3a9373a0.css.map",
+    "main.68dddfd8.js.map": "/FactBurst/static/js/main.68dddfd8.js.map",
+    "453.0d88736f.chunk.js.map": "/FactBurst/static/js/453.0d88736f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a9373a0.css",
+    "static/js/main.68dddfd8.js"
+  ]
+}
