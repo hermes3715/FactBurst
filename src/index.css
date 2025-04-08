@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply bg-secondary-50 text-secondary-800 font-sans;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-secondary-700 border border-secondary-200 hover:bg-secondary-50 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-card p-5;
+  }
+  
+  .icon-button {
+    @apply p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+}
+
+
+/* Add this to your src/index.css file */
+
+/* Playful background pattern */
+.bg-playful {
+  background-color: #f0f7ff;
+  background-image: 
+    radial-gradient(#60a5fa 2px, transparent 2px),
+    radial-gradient(#f472b6 2px, transparent 2px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add fun shapes floating in background */
+.bg-playful::before,
+.bg-playful::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.bg-playful::before {
+  background: linear-gradient(45deg, #f97316, #f43f5e);
+  top: -100px;
+  right: -100px;
+  animation: float-1 15s infinite ease-in-out;
+}
+
+.bg-playful::after {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  bottom: -100px;
+  left: -100px;
+  animation: float-2 18s infinite ease-in-out;
+}
+
+/* Floating animations */
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, 30px) rotate(5deg); }
+  50% { transform: translate(15px, 40px) rotate(10deg); }
+  75% { transform: translate(40px, 10px) rotate(5deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-20px, 30px) rotate(-5deg); }
+  50% { transform: translate(-30px, 15px) rotate(-10deg); }
+  75% { transform: translate(-10px, 25px) rotate(-5deg); }
+}
+
+/* Fun emoji decorations - add these to various components */
+.fun-emoji {
+  position: absolute;
+  opacity: 0.2;
+  pointer-events: none;
+  font-size: 2rem;
+  z-index: 0;
+  animation: spin 15s infinite linear;
+}
+
+.fun-emoji:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.fun-emoji:nth-child(2) {
+  top: 70%;
+  left: 80%;
+  animation-delay: -3s;
+}
+
+.fun-emoji:nth-child(3) {
+  top: 40%;
+  left: 90%;
+  animation-delay: -6s;
+}
+
+.fun-emoji:nth-child(4) {
+  top: 80%;
+  left: 30%;
+  animation-delay: -9s;
+}
+
+/* Spinning animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+Bouncing animation for buttons
+.btn-bounce:hover {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Card hover effects */
+.card-fun {
+  transition: all 0.3s ease;
+}
+
+.card-fun:hover {
+  transform: translateY(-5px) rotate(1deg);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.05);
+}
+
+/* For fact cards, add a subtle border gradient on hover */
+.fact-card {
+  position: relative;
+  z-index: 1;
+  transform: none !important;
+}
+
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Make sure content stays above the background */
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add these theme background variations */
+.bg-playful-dark {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(#3b82f6 1px, transparent 1px),
+    radial-gradient(#8b5cf6 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-playful-cosmic {
+  background-color: #1e1b4b;
+  background-image: 
+    radial-gradient(#818cf8 1px, transparent 1px),
+    radial-gradient(#c4b5fd 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-playful-sunset {
+  background-color: #fef3c7;
+  background-image: 
+    radial-gradient(#fb923c 1px, transparent 1px),
+    radial-gradient(#f97316 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Theme-specific before/after elements */
+.bg-playful-dark::before,
+.bg-playful-dark::after {
+  opacity: 0.08;
+}
+
+.bg-playful-dark::before {
+  background: linear-gradient(45deg, #7e22ce, #3b82f6);
+}
+
+.bg-playful-dark::after {
+  background: linear-gradient(45deg, #10b981, #3b82f6);
+}
+
+.bg-playful-cosmic::before,
+.bg-playful-cosmic::after {
+  opacity: 0.15;
+}
+
+.bg-playful-cosmic::before {
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+}
+
+.bg-playful-cosmic::after {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+}
+
+.bg-playful-sunset::before,
+.bg-playful-sunset::after {
+  opacity: 0.07;
+}
+
+.bg-playful-sunset::before {
+  background: linear-gradient(45deg, #f97316, #f43f5e);
+}
+
+.bg-playful-sunset::after {
+  background: linear-gradient(45deg, #eab308, #f97316);
+}
